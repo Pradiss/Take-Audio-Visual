@@ -1,4 +1,4 @@
-<section id="inicio" class="hero_root relative  overflow-hidden">
+<section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
   <div class="hero_top relative h-screen min-h-[720px] overflow-hidden">
     <div class="hero_bg absolute inset-0">
       <div class="hero_back absolute inset-0 z-0">
@@ -9,56 +9,20 @@
         />
       </div>
 
-      <div
-        class="hero_composite pointer-events-none absolute inset-0 z-[3] opacity-0"
-      >
-        <div
-          class="hero_house_composite absolute left-1/2 bottom-[-9%] w-[75vw] max-w-[1180px] -translate-x-1/2"
-        >
-          <img src="/images/house.webp" alt="" class="w-full object-contain" />
-        </div>
-      </div>
-
       <div class="hero_clouds pointer-events-none absolute inset-0 z-[1]">
-        <div
-          class="hero_cloud_left absolute left-[-20%] top-[22%] w-[70vw] max-w-[900px]"
-        >
+        <div class="hero_cloud_left absolute left-[-20%] top-[22%] w-[70vw] max-w-[900px]">
           <img src="/images/cloud.webp" alt="" class="w-full" />
         </div>
 
-        <div
-          class="hero_cloud_right absolute right-[-20%] top-[24%] w-[70vw] max-w-[900px]"
-        >
+        <div class="hero_cloud_right absolute right-[-20%] top-[24%] w-[70vw] max-w-[900px]">
           <img src="/images/cloud.webp" alt="" class="w-full" />
-        </div>
-      </div>
-
-      <div
-        class="hero_logo pointer-events-none absolute left-1/2 top-[47%] z-[2] w-[68vw] max-w-[980px] -translate-x-1/2 -translate-y-1/2 text-black opacity-0"
-      >
-        <img src="/Logo.png" alt="" class="w-full opacity-15" />
-      </div>
-
-      <div
-        class="hero_overlap pointer-events-none relative z-[6] -mt-32 h-32 overflow-hidden bg-[#f4efe7]"
-      >
-        <div class="absolute inset-x-0 top-[-80px]">
-          <img
-            src="/images/smoke.webp"
-            alt=""
-            class="w-full object-cover opacity-80"
-          />
         </div>
       </div>
     </div>
 
-    <div
-      class="hero_content relative z-[5] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center"
-    >
+    <div class="hero_content relative z-[5] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
       <div class="hero_title" aria-label="Crie Vídeos Que Marcam">
-        <h1
-          class="text-[58px] font-black leading-[0.9] tracking-[-0.065em] text-black md:text-[118px] lg:text-[148px]"
-        >
+        <h1 class="text-[58px] font-black leading-[0.9] tracking-[-0.065em] text-black md:text-[118px] lg:text-[148px]">
           <span class="hero_word inline-block overflow-hidden px-2">
             <span class="inline-block">Crie</span>
           </span>
@@ -77,14 +41,10 @@
         </h1>
       </div>
 
-      <div
-        class="hero_text mt-6 text-base font-medium text-black/55 md:text-lg"
-      >
+      <div class="hero_text mt-6 text-base font-medium text-black/55 md:text-lg">
         <p>
           Produção audiovisual. Direção criativa.
-          <span class="text-black/85"
-            >Uma forma clara de posicionar sua marca.</span
-          >
+          <span class="text-black/85">Uma forma clara de posicionar sua marca.</span>
         </p>
       </div>
 
@@ -100,16 +60,12 @@
     </div>
   </div>
 
-  <div
-    class="hero_overlap pointer-events-none relative z-[6] -mt-36 h-52 overflow-hidden"
-  >
+  <div class="hero_overlap pointer-events-none relative z-[6] -mt-36 h-52 overflow-hidden">
     <div class="absolute inset-x-0 top-0">
       <img src="/images/smoke.webp" alt="" class="w-full object-cover" />
     </div>
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-transparent to-[#f4efe7]"
-    >
-    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#f4efe7]"></div>
   </div>
 </section>
 
@@ -125,19 +81,11 @@
     },
   });
 
-  tl.from(".hero_root", {
-    autoAlpha: 0,
-    duration: 0.4,
+  tl.from("#site-header", {
+    y: -70,
+    opacity: 0,
+    duration: 0.9,
   })
-    .from(
-      "#site-header",
-      {
-        y: -70,
-        opacity: 0,
-        duration: 0.9,
-      },
-      "-=0.1",
-    )
     .from(
       ".hero_back",
       {
@@ -145,17 +93,7 @@
         opacity: 0,
         duration: 1.2,
       },
-      "-=0.6",
-    )
-    .from(
-      ".hero_house",
-      {
-        yPercent: -40,
-        scale: 1.3,
-        opacity: 0,
-        duration: 1.4,
-      },
-      "-=0.85",
+      "-=0.6"
     )
     .from(
       ".hero_cloud_left",
@@ -164,7 +102,7 @@
         opacity: 0,
         duration: 1.2,
       },
-      "-=1",
+      "-=1"
     )
     .from(
       ".hero_cloud_right",
@@ -173,7 +111,7 @@
         opacity: 0,
         duration: 1.2,
       },
-      "-=1.1",
+      "-=1.1"
     )
     .from(
       ".hero_word span",
@@ -182,7 +120,7 @@
         duration: 1,
         stagger: 0.08,
       },
-      "-=0.65",
+      "-=0.65"
     )
     .from(
       ".hero_text",
@@ -191,7 +129,7 @@
         opacity: 0,
         duration: 0.75,
       },
-      "-=0.4",
+      "-=0.4"
     )
     .from(
       ".hero_actions",
@@ -200,34 +138,13 @@
         opacity: 0,
         duration: 0.75,
       },
-      "-=0.45",
-    )
-    .from(
-      ".hero_smoke",
-      {
-        yPercent: 70,
-        opacity: 0,
-        duration: 1,
-      },
-      "-=0.7",
+      "-=0.45"
     );
 
   gsap.to(".hero_content", {
     yPercent: 20,
     scale: 0.9,
     opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_top",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.to(".hero_house", {
-    yPercent: -8,
-    scale: 1.08,
     ease: "none",
     scrollTrigger: {
       trigger: ".hero_top",
@@ -250,17 +167,6 @@
 
   gsap.to(".hero_cloud_right", {
     xPercent: 15,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_top",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.to(".hero_smoke", {
-    yPercent: 70,
     ease: "none",
     scrollTrigger: {
       trigger: ".hero_top",

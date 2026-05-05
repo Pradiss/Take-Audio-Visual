@@ -1,21 +1,65 @@
-<section id="contato" class="relative overflow-hidden bg-black py-32 text-white">
-  <div class="absolute inset-0 bg-gradient-to-br from-red-700 via-black to-black"></div>
-  <div class="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/30 blur-[140px]"></div>
+<section id="contato" class="cta-section relative z-10 h-screen overflow-hidden bg-black text-white">
+  <div class="cta-bg absolute inset-0">
+    <img
+      src="/IMG_3606.webp"
+      alt=""
+      class="h-[120%] w-full object-cover"
+    />
+  </div>
 
-  <div class="relative z-10 mx-auto max-w-7xl px-6 text-center">
-    <h2 class="reveal-text mx-auto max-w-5xl text-5xl font-black leading-none md:text-8xl">
-      Vamos transformar sua ideia em imagem?
+  <div class="absolute inset-0 bg-black/65"></div>
+
+  <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+    <h2 class="cta-title max-w-5xl text-[48px] font-medium leading-[52px] tracking-[-0.04em] md:text-[72px] md:leading-[76px]">
+      Sua marca merece ser lembrada.
     </h2>
 
-    <p class="mx-auto mt-8 max-w-2xl text-white/60">
-      Conte com a TAKE para criar vídeos que comunicam, posicionam e vendem.
-    </p>
-
     <a
-      href="https://wa.me/5500000000000"
-      class="mt-10 inline-flex rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:bg-red-600 hover:text-white"
+      href="https://wa.me/5519999999999"
+      class="cta-button mt-10 inline-flex items-center gap-4 rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:bg-red-600 hover:text-white"
     >
-      Falar no WhatsApp →
+      Vamos começar
+      <span>→</span>
     </a>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".cta-bg img", {
+    yPercent: -18,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".cta-section",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1.4,
+    },
+  });
+
+  gsap.from(".cta-title", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".cta-section",
+      start: "top 70%",
+    },
+  });
+
+  gsap.from(".cta-button", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".cta-section",
+      start: "top 60%",
+    },
+  });
+</script>

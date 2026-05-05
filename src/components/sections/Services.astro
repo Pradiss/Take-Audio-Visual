@@ -1,36 +1,124 @@
-<section id="servicos" class="bg-[#121515] py-28 text-white">
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="grid gap-12 md:grid-cols-2">
-      <p class="text-sm font-bold uppercase tracking-widest text-white/40">
-        Serviços
-      </p>
+---
+import { ArrowRight } from "lucide-astro";
+---
 
-      <h2 class="reveal-text text-4xl font-black leading-tight md:text-6xl">
-        Como a TAKE pode ajudar sua marca
+<section id="servicos" class="services-section bg-[#151717] text-white">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-[0.8fr_1.2fr] md:py-28">
+    <div>
+      <p class="text-sm font-bold">Serviços</p>
+    </div>
+
+    <div>
+      <h2 class="services-title text-[48px] font-medium leading-[52px] tracking-[-0.04em] md:text-[64px] md:leading-[68px]">
+        Como a TAKE
+        <span class="block text-white/35">pode ajudar</span>
       </h2>
     </div>
   </div>
 
-  <div class="mt-20">
-    {[
-      ["01", "Produção de vídeos", "Conteúdos institucionais, comerciais, vídeos para redes sociais e campanhas."],
-      ["02", "Captação audiovisual", "Filmagens profissionais para eventos, empresas, produtos e experiências."],
-      ["03", "Edição e finalização", "Montagem, cor, trilha, ritmo e acabamento para vídeos de alto impacto."]
-    ].map(([number, title, text]) => (
-      <article class="service-item group border-t border-white/10 py-12 transition hover:bg-white hover:text-black">
-        <div class="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-[120px_1fr_160px] md:items-center">
-          <span class="text-white/30 group-hover:text-black/30">{number}</span>
+  <div class="services-list">
 
-          <div>
-            <h3 class="text-3xl font-black md:text-5xl">{title}</h3>
-            <p class="mt-4 max-w-3xl text-white/50 group-hover:text-black/60">
-              {text}
-            </p>
-          </div>
+    <!-- STILL -->
+    <a href="#contato" class="group relative block overflow-hidden border-t border-white/15">
+      <div class="absolute inset-0 translate-y-full opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+        <img src="/IMG_3604.webp" class="h-full w-full translate-y-[18%] scale-110 object-cover transition-transform duration-1000 ease-out group-hover:translate-y-0" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
 
-          <span class="text-4xl transition group-hover:translate-x-4">→</span>
-        </div>
-      </article>
-    ))}
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-[70px_1fr] gap-8 px-6 py-16 md:grid-cols-[70px_420px_1fr_120px] md:items-center">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-sm">1</span>
+
+        <p class="max-w-sm text-[18px] font-semibold leading-[26px]">
+          Produção de imagens still para produtos, marcas e campanhas com acabamento profissional.
+        </p>
+
+        <h3 class="text-[40px] font-medium leading-none tracking-[-0.06em] underline-offset-[0.12em] decoration-2 group-hover:underline md:text-[70px]">
+          Still
+        </h3>
+
+        <span class="hidden transition group-hover:translate-x-3 md:block">
+          <ArrowRight size={60} strokeWidth={1.5} />
+        </span>
+      </div>
+    </a>
+
+    <!-- ARQUITETURA -->
+    <a href="#contato" class="group relative block overflow-hidden border-t border-white/15">
+      <div class="absolute inset-0 translate-y-full opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+        <img src="/IMG_3606.webp" class="h-full w-full translate-y-[18%] scale-110 object-cover transition-transform duration-1000 ease-out group-hover:translate-y-0" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-[70px_1fr] gap-8 px-6 py-16 md:grid-cols-[70px_420px_1fr_120px] md:items-center">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-sm">2</span>
+
+        <p class="max-w-sm text-[18px] font-semibold leading-[26px]">
+          Fotografia e vídeo de ambientes para valorizar arquitetura e interiores.
+        </p>
+
+        <h3 class="text-[40px] font-medium leading-none tracking-[-0.06em] underline-offset-[0.12em] decoration-2 group-hover:underline md:text-[70px]">
+          Arquitetura
+        </h3>
+
+        <span class="hidden transition group-hover:translate-x-3 md:block">
+          <ArrowRight size={60} strokeWidth={1.5} />
+        </span>
+      </div>
+    </a>
+
+    <!-- RETRATO -->
+    <a href="#contato" class="group relative block overflow-hidden border-t border-b border-white/15">
+      <div class="absolute inset-0 translate-y-full opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+        <img src="/IMG_3605.webp" class="h-full w-full translate-y-[18%] scale-110 object-cover transition-transform duration-1000 ease-out group-hover:translate-y-0" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-[70px_1fr] gap-8 px-6 py-16 md:grid-cols-[70px_420px_1fr_120px] md:items-center">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-sm">3</span>
+
+        <p class="max-w-sm text-[18px] font-semibold leading-[26px]">
+          Retratos profissionais para fortalecer autoridade e presença digital.
+        </p>
+
+        <h3 class="text-[40px] font-medium leading-none tracking-[-0.06em] underline-offset-[0.12em] decoration-2 group-hover:underline md:text-[70px]">
+          Retrato Corporativo
+        </h3>
+
+        <span class="hidden transition group-hover:translate-x-3 md:block">
+          <ArrowRight size={60} strokeWidth={1.5} />
+        </span>
+      </div>
+    </a>
+
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".services-title", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-section",
+      start: "top 75%",
+    },
+  });
+
+  gsap.from(".services-list > a", {
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.12,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list",
+      start: "top 80%",
+    },
+  });
+</script>

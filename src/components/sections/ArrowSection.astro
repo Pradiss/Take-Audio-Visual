@@ -7,23 +7,23 @@
 
     <div class="arrows-wrapper mt-14 flex justify-center">
       <div class="arrow-img">
-        <img src="/IMG_3739.JPG" alt="" />
+        <img src="/IMG_3739.webp" alt="" />
       </div>
 
       <div class="arrow-img">
-        <img src="/IMG_3604.JPG" alt="" />
+        <img src="/IMG_3604.webp" alt="" />
       </div>
 
       <div class="arrow-img">
-        <img src="/IMG_3605.JPG" alt="" />
+        <img src="/IMG_3605.webp" alt="" />
       </div>
 
       <div class="arrow-img">
-        <img src="/IMG_3613.JPG" alt="" />
+        <img src="/IMG_3613.webp" alt="" />
       </div>
     </div>
 
-    <p class="arrows-text mx-auto mt-12 max-w-4xl text-[26px] font-medium leading-[34px] tracking-[-0.04em] md:text-[34px] md:leading-[40px]">
+    <p class="arrows-text mx-auto mt-12 max-w-4xl text-[24px] font-medium leading-[34px] tracking-[-0.04em] md:text-[34px] md:leading-[40px]">
       É sobre identidade. Direção. Impacto.
       <br />
       Sua marca não está apenas buscando aparecer.
@@ -40,21 +40,21 @@
     align-items: center;
   }
 
-  .arrow-img {
-    width: 246px;
-    height: 340px;
-    margin-left: -45px;
-    overflow: hidden;
-    background: #111;
-    clip-path: polygon(
-      0 0,
-      72% 0,
-      100% 50%,
-      72% 100%,
-      0 100%,
-      28% 50%
-    );
-  }
+ .arrow-img {
+  width: 300px;
+  height: 330px;
+  margin-left: -105px;
+  overflow: hidden;
+  background: #111;
+  clip-path: polygon(
+    0 0,
+    50% 0,
+    100% 50%,
+    50% 100%,
+    0 100%,
+    50% 50%
+  );
+}
 
   .arrow-img:first-child {
     margin-left: 0;
@@ -75,6 +75,8 @@
   }
 </style>
 
+
+ 
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -83,50 +85,50 @@
 
   gsap.fromTo(
     ".arrows-title",
-    { y: 60, opacity: 0 },
+    { y: 35, opacity: 0 },
     {
       y: 0,
       opacity: 1,
-      ease: "none",
+      ease: "power2.out",
       scrollTrigger: {
         trigger: "#arrows",
         start: "top 85%",
-        end: "top 45%",
-        scrub: true,
+        end: "top 50%",
+        scrub: 1.2,
       },
     }
   );
 
   gsap.fromTo(
     ".arrow-img",
-    { xPercent: -25, opacity: 0, scale: 0.94 },
+    { y: 45, opacity: 0, scale: 0.97 },
     {
-      xPercent: 0,
+      y: 0,
       opacity: 1,
       scale: 1,
-      stagger: 0.12,
-      ease: "none",
+      stagger: 0.08,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: ".arrows-wrapper",
         start: "top 85%",
-        end: "top 40%",
-        scrub: true,
+        end: "top 50%",
+        scrub: 1.5,
       },
     }
   );
 
   gsap.fromTo(
     ".arrows-text",
-    { y: 50, opacity: 0 },
+    { y: 35, opacity: 0 },
     {
       y: 0,
       opacity: 1,
-      ease: "none",
+      ease: "power2.out",
       scrollTrigger: {
         trigger: ".arrows-text",
         start: "top 90%",
-        end: "top 60%",
-        scrub: true,
+        end: "top 65%",
+        scrub: 1.2,
       },
     }
   );

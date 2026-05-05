@@ -1,1 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap");
 @import "tailwindcss";
+
+/* Fonte base (textos) */
+body {
+  font-family: "Instrument Sans", sans-serif;
+    overflow-x: hidden;
+}
+html {
+  scroll-behavior: auto;
+}
+
+
+/* Títulos estilo TAKE */
+h1,
+h2,
+h3,
+.take-title {
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+/* Hero / títulos grandes */
+.take-display {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+}
+
+/* Botões */
+.take-button {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
