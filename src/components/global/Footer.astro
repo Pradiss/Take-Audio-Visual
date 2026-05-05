@@ -1,0 +1,116 @@
+<footer id="footer" class="relative overflow-hidden bg-[#141818] px-6 pt-24 pb-8 text-white">
+  <div class="mx-auto max-w-7xl">
+
+    <div class="footer-content grid gap-16 lg:grid-cols-[1.5fr_0.8fr]">
+      
+      <div>
+        <h2 class="text-2xl font-black md:text-3xl">
+          Assine nossa Newsletter!
+        </h2>
+
+        <form class="mt-10 flex max-w-3xl items-center border-b border-white/40 pb-4">
+          <input
+            type="email"
+            placeholder="Digite seu e-mail"
+            class="w-full bg-transparent text-lg font-semibold text-white outline-none placeholder:text-white/35"
+          />
+
+          <button type="submit" class="text-4xl leading-none transition hover:translate-x-2">
+            →
+          </button>
+        </form>
+
+        <div class="mt-24 grid gap-10 md:grid-cols-3">
+          <div>
+            <p class="text-sm font-bold text-white/35">Endereço</p>
+            <a href="#" class="mt-6 block text-lg font-bold leading-snug">
+              Limeira, São Paulo<br />
+              Brasil
+            </a>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold text-white/35">Email</p>
+            <a href="mailto:contato@takeaudiovisual.com" class="mt-6 block text-lg font-bold">
+              contato@takeaudiovisual.com
+            </a>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold text-white/35">Telefone</p>
+            <a href="tel:+5519999999999" class="mt-6 block text-lg font-bold">
+              +55 19 99999-9999
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-12">
+        <nav class="flex flex-col gap-5 text-3xl font-black leading-none md:text-4xl">
+          <a href="#inicio" class="transition hover:text-red-500">Início</a>
+          <a href="#why" class="transition hover:text-red-500">Sobre</a>
+          <a href="#servicos" class="transition hover:text-red-500">Serviços</a>
+          <a href="#portfolio" class="transition hover:text-red-500">Portfólio</a>
+          <a href="#contato" class="transition hover:text-red-500">Contato</a>
+        </nav>
+
+        <div class="flex flex-col gap-6 text-lg font-bold">
+          <a href="#" class="transition hover:text-red-500">Facebook</a>
+          <a href="#" class="transition hover:text-red-500">Instagram</a>
+          <a href="#" class="transition hover:text-red-500">Youtube</a>
+          <a href="#" class="transition hover:text-red-500">Linkedin</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-logo mt-28">
+      <img
+        src="/Logo.png"
+        alt="TAKE Audiovisual"
+        class="w-full max-w-[720px] brightness-0 invert"
+      />
+    </div>
+
+    <div class="mt-8 flex flex-col gap-4 text-sm font-bold text-white/35 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-wrap gap-x-8 gap-y-3">
+        <a href="#">Termos</a>
+        <a href="#">Política de privacidade</a>
+        <a href="#">Imprensa</a>
+        <span>TAKE Audiovisual</span>
+      </div>
+
+      <p>Copyright © 2026</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".footer-content", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 80%",
+    },
+  });
+
+  gsap.from(".footer-logo", {
+    y: 120,
+    opacity: 0,
+    duration: 1.1,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".footer-logo",
+      start: "top 90%",
+    },
+  });
+</script>

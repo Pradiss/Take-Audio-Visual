@@ -1,0 +1,133 @@
+<section id="arrows" class="relative bg-white px-6 py-24 text-black md:py-28">
+  <div class="mx-auto max-w-7xl text-center">
+    <h2 class="arrows-title text-[42px] font-medium leading-[48px] tracking-[-0.04em] md:text-[64px] md:leading-[68px]">
+      Não é só sobre
+      <span class="text-black/30">audiovisual.</span>
+    </h2>
+
+    <div class="arrows-wrapper mt-14 flex justify-center">
+      <div class="arrow-img">
+        <img src="/IMG_3739.JPG" alt="" />
+      </div>
+
+      <div class="arrow-img">
+        <img src="/IMG_3604.JPG" alt="" />
+      </div>
+
+      <div class="arrow-img">
+        <img src="/IMG_3605.JPG" alt="" />
+      </div>
+
+      <div class="arrow-img">
+        <img src="/IMG_3613.JPG" alt="" />
+      </div>
+    </div>
+
+    <p class="arrows-text mx-auto mt-12 max-w-4xl text-[26px] font-medium leading-[34px] tracking-[-0.04em] md:text-[34px] md:leading-[40px]">
+      É sobre identidade. Direção. Impacto.
+      <br />
+      Sua marca não está apenas buscando aparecer.
+      <span class="text-black/30">
+        Ela está buscando ser lembrada.
+      </span>
+    </p>
+  </div>
+</section>
+
+<style>
+  .arrows-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow-img {
+    width: 246px;
+    height: 340px;
+    margin-left: -45px;
+    overflow: hidden;
+    background: #111;
+    clip-path: polygon(
+      0 0,
+      72% 0,
+      100% 50%,
+      72% 100%,
+      0 100%,
+      28% 50%
+    );
+  }
+
+  .arrow-img:first-child {
+    margin-left: 0;
+  }
+
+  .arrow-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .arrow-img {
+      width: 130px;
+      height: 180px;
+      margin-left: -18px;
+    }
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".arrows-title",
+    { y: 60, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#arrows",
+        start: "top 85%",
+        end: "top 45%",
+        scrub: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".arrow-img",
+    { xPercent: -25, opacity: 0, scale: 0.94 },
+    {
+      xPercent: 0,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.12,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".arrows-wrapper",
+        start: "top 85%",
+        end: "top 40%",
+        scrub: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".arrows-text",
+    { y: 50, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".arrows-text",
+        start: "top 90%",
+        end: "top 60%",
+        scrub: true,
+      },
+    }
+  );
+</script>

@@ -1,0 +1,36 @@
+<section id="servicos" class="bg-[#121515] py-28 text-white">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid gap-12 md:grid-cols-2">
+      <p class="text-sm font-bold uppercase tracking-widest text-white/40">
+        Serviços
+      </p>
+
+      <h2 class="reveal-text text-4xl font-black leading-tight md:text-6xl">
+        Como a TAKE pode ajudar sua marca
+      </h2>
+    </div>
+  </div>
+
+  <div class="mt-20">
+    {[
+      ["01", "Produção de vídeos", "Conteúdos institucionais, comerciais, vídeos para redes sociais e campanhas."],
+      ["02", "Captação audiovisual", "Filmagens profissionais para eventos, empresas, produtos e experiências."],
+      ["03", "Edição e finalização", "Montagem, cor, trilha, ritmo e acabamento para vídeos de alto impacto."]
+    ].map(([number, title, text]) => (
+      <article class="service-item group border-t border-white/10 py-12 transition hover:bg-white hover:text-black">
+        <div class="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-[120px_1fr_160px] md:items-center">
+          <span class="text-white/30 group-hover:text-black/30">{number}</span>
+
+          <div>
+            <h3 class="text-3xl font-black md:text-5xl">{title}</h3>
+            <p class="mt-4 max-w-3xl text-white/50 group-hover:text-black/60">
+              {text}
+            </p>
+          </div>
+
+          <span class="text-4xl transition group-hover:translate-x-4">→</span>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
