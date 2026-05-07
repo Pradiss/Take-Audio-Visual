@@ -1,3 +1,7 @@
+---
+import Button from "../global/Button.astro";
+---
+
 <section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
   <div class="hero_top relative h-screen min-h-[720px] overflow-hidden">
     <div class="hero_bg absolute inset-0">
@@ -49,13 +53,9 @@
       </div>
 
       <div class="hero_actions mt-8">
-        <a
-          href="#servicos"
-          class="inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm font-bold text-white transition hover:scale-105 hover:bg-red-600"
-        >
-          Conheça os serviços
-          <span>→</span>
-        </a>
+      
+
+        <Button href="#portfolio" text="View Portfolio" variant="dark" />
       </div>
     </div>
   </div>

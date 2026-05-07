@@ -1,0 +1,151 @@
+---
+const {
+  href = "#",
+  text = "View Portfolio",
+  variant = "dark",
+} = Astro.props;
+---
+
+<a href={href} class={`site-button ${variant}`}>
+  <span class="site-button-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 8.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7Zm0-5v3m0 11v3m8.5-8.5h-3m-11 0h-3" />
+    </svg>
+  </span>
+
+  <span class="site-button-text">{text}</span>
+</a>
+
+<style>
+  .site-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 11px 17px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+      background 0.35s ease,
+      color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .site-button.dark {
+    background: #050505;
+    color: #fff;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+  }
+
+  .site-button.light {
+    background: #fff;
+    color: #050505;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .site-button:hover {
+    background: #e50914;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.32);
+  }
+
+  .site-button-icon {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .site-button-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.45s ease;
+  }
+
+  .site-button:hover .site-button-icon svg {
+    transform: rotate(90deg) scale(1.05);
+  }
+
+  .site-button-icon span {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 2px solid currentColor;
+    opacity: 0;
+    transition:
+      opacity 0.28s ease,
+      transform 0.45s ease;
+  }
+
+  .site-button-icon span:nth-child(1) {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    transform: translate(-8px, -8px);
+  }
+
+  .site-button-icon span:nth-child(2) {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    transform: translate(8px, -8px);
+  }
+
+  .site-button-icon span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    border-right: 0;
+    border-top: 0;
+    transform: translate(-8px, 8px);
+  }
+
+  .site-button-icon span:nth-child(4) {
+    right: 0;
+    bottom: 0;
+    border-left: 0;
+    border-top: 0;
+    transform: translate(8px, 8px);
+  }
+
+  .site-button:hover .site-button-icon span {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  @media (max-width: 768px) {
+    .site-button {
+      gap: 9px;
+      padding: 9px 16px;
+      font-size: 13px;
+    }
+
+    .site-button-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .site-button-icon svg {
+      width: 13px;
+      height: 13px;
+    }
+  }
+</style>

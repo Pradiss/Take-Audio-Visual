@@ -1,26 +1,75 @@
-<section id="contato" class="cta-section relative z-10 h-screen overflow-hidden bg-black text-white">
-  <div class="cta-bg absolute inset-0">
+---
+import Button from "../global/Button.astro";
+---
+
+<section id="contato" class="cta-framer relative min-h-screen overflow-hidden bg-black text-white">
+  <div class="absolute inset-0">
     <img
       src="/IMG_3606.webp"
       alt=""
-      class="h-[120%] w-full object-cover"
+      class="h-full w-full object-cover"
     />
   </div>
 
-  <div class="absolute inset-0 bg-black/65"></div>
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-black"></div>
 
-  <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-    <h2 class="cta-title max-w-5xl text-[48px] font-medium leading-[52px] tracking-[-0.04em] md:text-[72px] md:leading-[76px]">
-      Sua marca merece ser lembrada.
-    </h2>
+  <div class="pointer-events-none absolute inset-0 z-[2] grid grid-cols-6">
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-r border-white/5"></span>
+  </div>
 
-    <a
-      href="https://wa.me/5519999999999"
-      class="cta-button mt-10 inline-flex items-center gap-4 rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:bg-red-600 hover:text-white"
-    >
-      Vamos começar
-      <span>→</span>
-    </a>
+  <div class="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col justify-between px-6 py-20 md:px-12 md:py-24">
+    <div class="grid gap-14 md:grid-cols-[1.25fr_0.75fr] md:items-start">
+      <div class="max-w-[880px]">
+        <h2 class="cta-title text-[48px] font-semibold leading-[1.08] tracking-[-0.04em] md:text-[76px]">
+          Every Frame Tells a Story;
+          <br />
+          Let’s Tell <span class="text-[#e50914]">Yours.</span>
+        </h2>
+
+        <p class="cta-text mt-7 max-w-[580px] text-[19px] leading-[1.45] text-white/60 md:text-[22px]">
+          Let’s create timeless photos you’ll cherish forever. Book your session today and let’s make it unforgettable.
+        </p>
+
+        <div class="cta-button mt-14">
+          <Button href="https://wa.me/5519999999999" text="Capture Your Story" variant="light" />
+        </div>
+      </div>
+
+      <figure class="cta-image ml-auto mt-4 hidden h-[380px] w-full max-w-[420px] overflow-hidden rounded-xl md:block">
+        <img
+          src="/IMG_3605.webp"
+          alt="Retrato em preto e branco"
+          class="h-full w-full object-cover grayscale"
+        />
+      </figure>
+    </div>
+
+    <div class="cta-bottom ml-auto grid max-w-[560px] gap-7 pb-4 md:mr-[34%]">
+      <p class="text-[18px] leading-[1.35] text-white/65 md:text-[20px]">
+        Whether it’s a portrait, event, or brand shoot; your vision deserves the best. From candid smiles to grand celebrations, I’ll capture it all beautifully.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-12 overflow-hidden rounded-md border border-white/10">
+          <img
+            src="/IMG_3604.webp"
+            alt=""
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <div>
+          <h3 class="text-[22px] font-semibold leading-none">Timi Joel</h3>
+          <p class="mt-1 text-[16px] text-white/45">Photographer 🇳🇬 🇳🇱</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -30,36 +79,61 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".cta-bg img", {
-    yPercent: -18,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".cta-section",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1.4,
-    },
-  });
-
   gsap.from(".cta-title", {
-    y: 60,
+    y: 50,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".cta-section",
+      trigger: ".cta-framer",
+      start: "top 70%",
+    },
+  });
+
+  gsap.from(".cta-text", {
+    y: 35,
+    opacity: 0,
+    duration: 0.9,
+    delay: 0.1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".cta-framer",
       start: "top 70%",
     },
   });
 
   gsap.from(".cta-button", {
-    y: 30,
+    y: 25,
     opacity: 0,
     duration: 0.8,
+    delay: 0.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".cta-section",
-      start: "top 60%",
+      trigger: ".cta-framer",
+      start: "top 70%",
+    },
+  });
+
+  gsap.from(".cta-image", {
+    y: 45,
+    opacity: 0,
+    scale: 0.96,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".cta-framer",
+      start: "top 65%",
+    },
+  });
+
+  gsap.from(".cta-bottom", {
+    y: 45,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".cta-bottom",
+      start: "top 90%",
     },
   });
 </script>

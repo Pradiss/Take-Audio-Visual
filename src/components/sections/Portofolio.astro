@@ -1,0 +1,117 @@
+---
+import Button from "../global/Button.astro";
+
+const portfolio = {
+  titleStart: "MEUS",
+  titleEnd: "CLICKS",
+  heroImage: "/IMG_3604.webp",
+  description:
+    "Explore uma seleção de imagens, projetos e momentos capturados para marcas, produtos, pessoas e campanhas.",
+  buttonText: "Solicitar orçamento",
+
+  images: [
+    { src: "/IMG_3604.webp", alt: "Projeto 1", class: "aspect-square" },
+    { src: "/IMG_3605.webp", alt: "Projeto 2", class: "aspect-[1.7/1]" },
+    { src: "/IMG_3606.webp", alt: "Projeto 3", class: "aspect-[0.75/1]" },
+    { src: "/IMG_3613.webp", alt: "Projeto 4", class: "aspect-[0.8/1]" },
+
+    { src: "/IMG_3739.webp", alt: "Projeto 5", class: "aspect-[0.75/1]" },
+    { src: "/IMG_3604.webp", alt: "Projeto 6", class: "aspect-[0.8/1]" },
+    { src: "/IMG_3605.webp", alt: "Projeto 7", class: "aspect-square" },
+    { src: "/IMG_3606.webp", alt: "Projeto 8", class: "aspect-[1.5/1]" },
+
+    { src: "/IMG_3613.webp", alt: "Projeto 9", class: "aspect-square" },
+    { src: "/IMG_3739.webp", alt: "Projeto 10", class: "aspect-[0.75/1]" },
+    { src: "/IMG_3604.webp", alt: "Projeto 11", class: "aspect-square" },
+    { src: "/IMG_3605.webp", alt: "Projeto 12", class: "aspect-[0.66/1]" },
+  ],
+};
+
+const columns = [
+  portfolio.images.filter((_, index) => index % 4 === 0),
+  portfolio.images.filter((_, index) => index % 4 === 1),
+  portfolio.images.filter((_, index) => index % 4 === 2),
+  portfolio.images.filter((_, index) => index % 4 === 3),
+];
+---
+
+<section id="portfolio-modelo" class="relative overflow-hidden bg-white text-black">
+  <div class="pointer-events-none absolute inset-0 z-0 hidden grid-cols-6 md:grid">
+    <span class="border-l border-black/5"></span>
+    <span class="border-l border-black/5"></span>
+    <span class="border-l border-black/5"></span>
+    <span class="border-l border-black/5"></span>
+    <span class="border-l border-black/5"></span>
+    <span class="border-l border-r border-black/5"></span>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-[1800px] px-5 py-16 sm:px-6 md:px-12 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-[1fr_260px]">
+      <div>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-3 sm:gap-x-5 md:gap-x-6">
+          <h1 class="text-[54px] font-bold leading-none tracking-[-0.06em] sm:text-[76px] md:text-[110px] xl:text-[144px]">
+            {portfolio.titleStart}
+          </h1>
+
+          <div class="h-[48px] w-[132px] overflow-hidden rounded-lg sm:h-[64px] sm:w-[190px] md:h-[82px] md:w-[240px] xl:h-[92px] xl:w-[260px]">
+            <img
+              src={portfolio.heroImage}
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <h1 class="text-[54px] font-bold leading-none tracking-[-0.06em] sm:text-[76px] md:text-[110px] xl:text-[144px]">
+            {portfolio.titleEnd}
+          </h1>
+        </div>
+
+        <p class="mt-8 max-w-[520px] text-[19px] leading-[1.35] text-black/65 sm:text-[22px] md:mt-10 md:text-[26px]">
+          {portfolio.description}
+        </p>
+
+        <div class="mt-10 md:mt-14">
+          <Button href="#contato" text={portfolio.buttonText} variant="dark" />
+        </div>
+      </div>
+
+      <aside class="hidden lg:block">
+        <p class="text-[18px] font-semibold">Fotógrafo</p>
+        <p class="mt-1 text-[17px] text-black/45">Brasil.</p>
+
+        <nav class="mt-32 flex flex-col gap-8 text-[24px] font-medium uppercase tracking-[0.03em]">
+          <a href="#portfolio" class="underline decoration-2 underline-offset-4 transition hover:text-[#e50914]">
+            Portfólio
+          </a>
+          <a href="#servicos" class="underline decoration-2 underline-offset-4 transition hover:text-[#e50914]">
+            Serviços
+          </a>
+          <a href="#portfolio-modelo" class="underline decoration-2 underline-offset-4 transition hover:text-[#e50914]">
+            Fotos
+          </a>
+          <a href="#contato" class="underline decoration-2 underline-offset-4 transition hover:text-[#e50914]">
+            Contato
+          </a>
+        </nav>
+      </aside>
+    </div>
+  </div>
+
+  <div class="relative z-10 border-t border-black/5 px-5 py-12 sm:px-6 md:px-12 md:py-20">
+    <div class="mx-auto grid max-w-[1800px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {columns.map((column) => (
+        <div class="flex flex-col gap-3">
+          {column.map((image) => (
+            <figure class={`group overflow-hidden rounded-xl ${image.class}`}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </figure>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,3 +1,8 @@
+---
+import Button from "./Button.astro";
+
+---
+
 <header
   id="site-header"
   class="fixed left-0 top-0 z-50 w-full translate-y-0 bg-transparent transition-all duration-300"
@@ -11,20 +16,16 @@
       />
     </a>
 
-    <nav class="hidden items-center gap-8 text-sm font-medium text-black/70 md:flex">
+    <nav
+      class="hidden items-center gap-8 text-sm font-medium text-black/70 md:flex"
+    >
       <a href="#inicio" class="hover:text-black">Início</a>
       <a href="#sobre" class="hover:text-black">Sobre</a>
       <a href="#servicos" class="hover:text-black">Serviços</a>
       <a href="#portfolio" class="hover:text-black">Portfólio</a>
       <a href="#contato" class="hover:text-black">Contato</a>
     </nav>
-
-    <a
-      href="#contato"
-      class="rounded-full bg-black px-5 py-2 text-sm font-semibold text-white transition hover:scale-105 hover:bg-red-600"
-    >
-      Orçamento
-    </a>
+    <Button />
   </div>
 </header>
 
