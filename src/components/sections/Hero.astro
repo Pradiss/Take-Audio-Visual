@@ -3,10 +3,10 @@ import Button from "../global/Button.astro";
 ---
 
 <section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
-  <!-- PRIMEIRA CENA: título -->
+  <!-- PRIMEIRA CENA -->
   <div class="hero_top relative z-[1] h-[180vh] overflow-hidden">
     <div class="hero_sticky sticky top-0 h-screen min-h-[720px] overflow-hidden">
-      <div class="hero_back absolute inset-0 ">
+      <div class="hero_back absolute inset-0 z-0">
         <img
           src="/images/back.webp"
           alt=""
@@ -14,7 +14,7 @@ import Button from "../global/Button.astro";
         />
       </div>
 
-      <div class="hero_clouds pointer-events-none absolute inset-0 ">
+      <div class="hero_clouds pointer-events-none absolute inset-0 z-[2]">
         <div class="hero_cloud_left absolute left-[-20%] top-[24%] w-[70vw] max-w-[900px]">
           <img src="/images/cloud.webp" alt="" class="w-full" />
         </div>
@@ -24,7 +24,7 @@ import Button from "../global/Button.astro";
         </div>
       </div>
 
-      <div class="hero_content relative  mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
+      <div class="hero_content relative z-[10] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
         <h1 class="hero_title text-[58px] font-black leading-[0.9] tracking-[-0.065em] text-black md:text-[118px] lg:text-[148px]">
           <span class="hero_word inline-block overflow-hidden px-2">
             <span class="inline-block">Crie</span>
@@ -59,9 +59,9 @@ import Button from "../global/Button.astro";
     </div>
   </div>
 
-  <!-- SEGUNDA CENA: casa + logo -->
-  <div class="hero_reveal relative  -mt-[100vh] min-h-screen overflow-hidden">
-    <div class="hero_reveal_bg absolute inset-0 ">
+  <!-- SEGUNDA CENA -->
+  <div class="hero_reveal relative z-[20] -mt-[100vh] min-h-screen overflow-hidden">
+    <div class="hero_reveal_bg absolute inset-0 z-0">
       <img
         src="/images/back.webp"
         alt=""
@@ -69,7 +69,8 @@ import Button from "../global/Button.astro";
       />
     </div>
 
-    <div class="hero_reveal_house absolute inset-x-0 bottom-[4%] z-50  mx-auto w-[88vw] max-w-[1320px]">
+    <!-- CASA COMO BACKGROUND, SEM ATRAPALHAR CLIQUE/HOVER -->
+    <div class="hero_reveal_house pointer-events-none absolute inset-x-0 bottom-[4%] z-[5] mx-auto w-[88vw] max-w-[1320px]">
       <img
         src="/images/house.webp"
         alt=""
@@ -77,7 +78,7 @@ import Button from "../global/Button.astro";
       />
     </div>
 
-    <div class="hero_reveal_logo absolute inset-x-0 bottom-[30%] flex justify-center">
+    <div class="hero_reveal_logo pointer-events-none absolute inset-x-0 bottom-[30%] z-[10] flex justify-center">
       <svg
         class="hero_logo_svg w-[78vw] max-w-[1100px]"
         viewBox="0 0 1600 520"
@@ -159,8 +160,8 @@ import Button from "../global/Button.astro";
       </svg>
     </div>
 
-    <!-- NUVENS/FUMAÇA FIXAS EMBAIXO, SEM SUBIR -->
-    <div class="hero_reveal_clouds pointer-events-none absolute inset-x-0 bottom-0 z-[50]">
+    <!-- NUVENS/FUMAÇA FIXAS EMBAIXO -->
+    <div class="hero_reveal_clouds pointer-events-none absolute inset-x-0 bottom-0 z-[15]">
       <div class="hero_reveal_cloud_left absolute left-[-18%] bottom-[-4vh] w-[70vw] max-w-[900px]">
         <img src="/images/cloud.webp" alt="" class="w-full" />
       </div>
@@ -346,9 +347,4 @@ import Button from "../global/Button.astro";
       scrub: 1.2,
     },
   });
-
-  /*
-    Não tem animação nas nuvens de baixo.
-    Elas ficam fixas no bottom da segunda cena para não criar espaço embaixo.
-  */
 </script>
