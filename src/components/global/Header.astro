@@ -1,55 +1,100 @@
 ---
-import Button from "./Button.astro";
-
+import { Menu, X, ChevronDown } from "lucide-astro";
 ---
 
-<header
-  id="site-header"
-  class="fixed left-0 top-0 z-50 w-full translate-y-0 bg-transparent transition-all duration-300"
->
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-    <a href="/" class="flex items-center">
-      <img
-        src="/logo1.webp"
-        alt="TAKE Audiovisual"
-        class="w-full max-w-[120px]"
-      />
+<header class="fixed left-0 top-0 z-50 w-full bg-transparent px-4 py-4 text-white">
+  <div class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/30 px-5 py-3 backdrop-blur-xl">
+    
+    <a href="/" class="text-2xl font-bold tracking-[-0.04em]">
+      <img src="/public/logo1.webp" alt="Logo da TAKE" class=" w-auto h-10">
     </a>
 
-    <nav
-      class="hidden items-center gap-8 text-sm font-medium text-black/70 md:flex"
-    >
-      <a href="#inicio" class="hover:text-black">Início</a>
-      <a href="#sobre" class="hover:text-black">Sobre</a>
-      <a href="#servicos" class="hover:text-black">Serviços</a>
-      <a href="#portfolio" class="hover:text-black">Portfólio</a>
-      <a href="#contato" class="hover:text-black">Contato</a>
+    <nav class="hidden items-center gap-8 text-sm font-medium text-white/80 lg:flex">
+      <a href="#inicio" class="transition hover:text-white">Início</a>
+      <a href="#servicos" class="transition hover:text-white">Serviços</a>
+      <a href="#projetos" class="transition hover:text-white">Portfólio</a>
+
+      <a href="#depoimentos" class="flex items-center gap-1 transition hover:text-white">
+        Depoimentos
+        <ChevronDown class="h-4 w-4" />
+      </a>
+
+      <a href="#contato" class="transition hover:text-white">Contato</a>
     </nav>
-    <Button />
+
+    <a
+      href="#contato"
+      class="hidden rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200 lg:block"
+    >
+      Fale conosco
+    </a>
+
+    <button
+      id="menu-open"
+      type="button"
+      aria-label="Abrir menu"
+      class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white lg:hidden"
+    >
+      <Menu class="h-5 w-5" />
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="pointer-events-none fixed inset-0 z-50 flex translate-y-[-10px] flex-col bg-black px-6 py-5 opacity-0 transition duration-300 lg:hidden"
+  >
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold tracking-[-0.04em]">
+        EVOO
+      </a>
+
+      <button
+        id="menu-close"
+        type="button"
+        aria-label="Fechar menu"
+        class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white"
+      >
+        <X class="h-5 w-5" />
+      </button>
+    </div>
+
+    <nav class="mt-16 flex flex-col gap-6 text-4xl font-medium tracking-[-0.04em]">
+      <a href="#inicio" class="mobile-link">Início</a>
+      <a href="#servicos" class="mobile-link">Serviços</a>
+      <a href="#projetos" class="mobile-link">Projetos</a>
+      <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+    </nav>
+
+    <a
+      href="#contato"
+      class="mt-auto rounded-full bg-white px-6 py-4 text-center text-sm font-semibold text-black"
+    >
+      Fale conosco
+    </a>
   </div>
 </header>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector("#site-header");
-    let lastScroll = window.scrollY;
+  const openButton = document.querySelector("#menu-open");
+  const closeButton = document.querySelector("#menu-close");
+  const mobileMenu = document.querySelector("#mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
 
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
+  function openMenu() {
+    mobileMenu.classList.remove("pointer-events-none", "translate-y-[-10px]", "opacity-0");
+    mobileMenu.classList.add("pointer-events-auto", "translate-y-0", "opacity-100");
+  }
 
-      if (currentScroll <= 20) {
-        header.style.transform = "translateY(0)";
-        header.classList.remove("bg-white", "shadow-md");
-        header.classList.add("bg-transparent");
-      } else if (currentScroll > lastScroll) {
-        header.style.transform = "translateY(-100%)";
-      } else {
-        header.style.transform = "translateY(0)";
-        header.classList.remove("bg-transparent");
-        header.classList.add("bg-white", "shadow-md");
-      }
+  function closeMenu() {
+    mobileMenu.classList.add("pointer-events-none", "translate-y-[-10px]", "opacity-0");
+    mobileMenu.classList.remove("pointer-events-auto", "translate-y-0", "opacity-100");
+  }
 
-      lastScroll = currentScroll;
-    });
+  openButton?.addEventListener("click", openMenu);
+  closeButton?.addEventListener("click", closeMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 </script>
