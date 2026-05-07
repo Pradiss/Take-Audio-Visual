@@ -1,3 +1,24 @@
+---
+const arrows = [
+  {
+    image: "/IMG_3739.webp",
+    alt: "Imagem audiovisual 1",
+  },
+  {
+    image: "/IMG_3604.webp",
+    alt: "Imagem audiovisual 2",
+  },
+  {
+    image: "/IMG_3605.webp",
+    alt: "Imagem audiovisual 3",
+  },
+  {
+    image: "/IMG_3613.webp",
+    alt: "Imagem audiovisual 4",
+  },
+];
+---
+
 <section id="arrows" class="relative bg-white px-6 py-24 text-black md:py-28">
   <div class="mx-auto max-w-7xl text-center">
     <h2 class="arrows-title text-[42px] font-medium leading-[48px] tracking-[-0.04em] md:text-[64px] md:leading-[68px]">
@@ -6,21 +27,11 @@
     </h2>
 
     <div class="arrows-wrapper mt-14 flex justify-center">
-      <div class="arrow-img">
-        <img src="/IMG_3739.webp" alt="" />
-      </div>
-
-      <div class="arrow-img">
-        <img src="/IMG_3604.webp" alt="" />
-      </div>
-
-      <div class="arrow-img">
-        <img src="/IMG_3605.webp" alt="" />
-      </div>
-
-      <div class="arrow-img">
-        <img src="/IMG_3613.webp" alt="" />
-      </div>
+      {arrows.map((arrow) => (
+        <div class="arrow-img">
+          <img src={arrow.image} alt={arrow.alt} />
+        </div>
+      ))}
     </div>
 
     <p class="arrows-text mx-auto mt-12 max-w-4xl text-[24px] font-medium leading-[34px] tracking-[-0.04em] md:text-[34px] md:leading-[40px]">
@@ -40,21 +51,21 @@
     align-items: center;
   }
 
- .arrow-img {
-  width: 300px;
-  height: 330px;
-  margin-left: -105px;
-  overflow: hidden;
-  background: #111;
-  clip-path: polygon(
-    0 0,
-    50% 0,
-    100% 50%,
-    50% 100%,
-    0 100%,
-    50% 50%
-  );
-}
+  .arrow-img {
+    width: 300px;
+    height: 330px;
+    margin-left: -105px;
+    overflow: hidden;
+    background: #111;
+    clip-path: polygon(
+      0 0,
+      50% 0,
+      100% 50%,
+      50% 100%,
+      0 100%,
+      50% 50%
+    );
+  }
 
   .arrow-img:first-child {
     margin-left: 0;
@@ -75,8 +86,6 @@
   }
 </style>
 
-
- 
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";

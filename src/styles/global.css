@@ -17,7 +17,7 @@ h2,
 h3,
 .take-title {
   font-family: "Rajdhani", sans-serif;
-  text-transform: uppercase;
+  
   letter-spacing: -0.04em;
 }
 
@@ -25,7 +25,7 @@ h3,
 .take-display {
   font-family: "Rajdhani", sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+ 
   letter-spacing: -0.06em;
   line-height: 0.85;
 }
@@ -34,6 +34,6 @@ h3,
 .take-button {
   font-family: "Rajdhani", sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  
   letter-spacing: 0.04em;
 }
