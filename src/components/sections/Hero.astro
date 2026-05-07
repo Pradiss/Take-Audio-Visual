@@ -3,122 +3,28 @@ import Button from "../global/Button.astro";
 ---
 
 <section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
-  <div class="hero_top relative h-[180vh] overflow-hidden">
+  <!-- PRIMEIRA CENA: título -->
+  <div class="hero_top relative z-[1] h-[180vh] overflow-hidden">
     <div class="hero_sticky sticky top-0 h-screen min-h-[720px] overflow-hidden">
-      <div class="hero_bg absolute inset-0">
-        <div class="hero_back absolute inset-0 z-0">
-          <img
-            src="/images/back.webp"
-            alt=""
-            class="h-full w-full object-cover"
-          />
+      <div class="hero_back absolute inset-0 ">
+        <img
+          src="/images/back.webp"
+          alt=""
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <div class="hero_clouds pointer-events-none absolute inset-0 ">
+        <div class="hero_cloud_left absolute left-[-20%] top-[24%] w-[70vw] max-w-[900px]">
+          <img src="/images/cloud.webp" alt="" class="w-full" />
         </div>
 
-        <div class="hero_house absolute inset-x-0 bottom-[-6%] z-[2] mx-auto w-[78vw] max-w-[1180px]">
-          <img src="/images/house.webp" alt="" class="w-full" />
-        </div>
-
-        <div class="hero_clouds pointer-events-none absolute inset-0 z-[3]">
-          <div class="hero_cloud_left absolute left-[-18%] top-[26%] w-[70vw] max-w-[900px]">
-            <img src="/images/cloud.webp" alt="" class="w-full" />
-          </div>
-
-          <div class="hero_cloud_right absolute right-[-18%] top-[26%] w-[70vw] max-w-[900px]">
-            <img src="/images/cloud.webp" alt="" class="w-full" />
-          </div>
-        </div>
-
-        <div class="hero_logo_layer pointer-events-none absolute inset-x-0 bottom-[8%] z-[4] flex justify-center opacity-0">
-          <div class="relative mx-auto w-[82vw] max-w-[1100px]">
-            <svg
-              class="hero_logo_svg mx-auto w-full"
-              viewBox="0 0 1600 520"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <clipPath id="take-logo-clip">
-                  <text
-                    x="50%"
-                    y="44%"
-                    text-anchor="middle"
-                    dominant-baseline="middle"
-                    font-size="260"
-                    font-weight="900"
-                    font-family="Arial Black, Impact, sans-serif"
-                    letter-spacing="-18"
-                  >
-                    TAKE
-                  </text>
-
-                  <text
-                    x="50%"
-                    y="75%"
-                    text-anchor="middle"
-                    dominant-baseline="middle"
-                    font-size="72"
-                    font-weight="600"
-                    font-family="Arial, sans-serif"
-                    letter-spacing="22"
-                  >
-                    AUDIOVISUAL
-                  </text>
-                </clipPath>
-              </defs>
-
-              <image
-                class="hero_logo_fill"
-                href="/images/house.webp"
-                x="0"
-                y="0"
-                width="1600"
-                height="520"
-                preserveAspectRatio="xMidYMid slice"
-                clip-path="url(#take-logo-clip)"
-                opacity="0"
-              />
-
-              <g
-                class="hero_logo_outline"
-                fill="transparent"
-                stroke="rgba(255,255,255,0.95)"
-                stroke-width="2"
-              >
-                <text
-                  x="50%"
-                  y="44%"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  font-size="260"
-                  font-weight="900"
-                  font-family="Arial Black, Impact, sans-serif"
-                  letter-spacing="-18"
-                >
-                  TAKE
-                </text>
-
-                <text
-                  x="50%"
-                  y="75%"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  font-size="72"
-                  font-weight="600"
-                  font-family="Arial, sans-serif"
-                  letter-spacing="22"
-                >
-                  AUDIOVISUAL
-                </text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <div class="hero_smoke absolute inset-x-0 bottom-[-12%] z-[5]">
-          <img src="/images/smoke.webp" alt="" class="w-full object-cover" />
+        <div class="hero_cloud_right absolute right-[-20%] top-[24%] w-[70vw] max-w-[900px]">
+          <img src="/images/cloud.webp" alt="" class="w-full" />
         </div>
       </div>
 
-      <div class="hero_content relative z-[6] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
+      <div class="hero_content relative  mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
         <h1 class="hero_title text-[58px] font-black leading-[0.9] tracking-[-0.065em] text-black md:text-[118px] lg:text-[148px]">
           <span class="hero_word inline-block overflow-hidden px-2">
             <span class="inline-block">Crie</span>
@@ -152,6 +58,122 @@ import Button from "../global/Button.astro";
       </div>
     </div>
   </div>
+
+  <!-- SEGUNDA CENA: casa + logo -->
+  <div class="hero_reveal relative  -mt-[100vh] min-h-screen overflow-hidden">
+    <div class="hero_reveal_bg absolute inset-0 ">
+      <img
+        src="/images/back.webp"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="hero_reveal_house absolute inset-x-0 bottom-[4%] z-50  mx-auto w-[88vw] max-w-[1320px]">
+      <img
+        src="/images/house.webp"
+        alt=""
+        class="w-full"
+      />
+    </div>
+
+    <div class="hero_reveal_logo absolute inset-x-0 bottom-[30%] flex justify-center">
+      <svg
+        class="hero_logo_svg w-[78vw] max-w-[1100px]"
+        viewBox="0 0 1600 520"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <clipPath id="take-logo-clip">
+            <text
+              x="50%"
+              y="44%"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="260"
+              font-weight="900"
+              font-family="Arial Black, Impact, sans-serif"
+              letter-spacing="-18"
+            >
+              TAKE
+            </text>
+
+            <text
+              x="50%"
+              y="75%"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="72"
+              font-weight="600"
+              font-family="Arial, sans-serif"
+              letter-spacing="22"
+            >
+              AUDIOVISUAL
+            </text>
+          </clipPath>
+        </defs>
+
+        <image
+          class="hero_logo_fill"
+          href="/images/house.webp"
+          x="0"
+          y="0"
+          width="1600"
+          height="520"
+          preserveAspectRatio="xMidYMid slice"
+          clip-path="url(#take-logo-clip)"
+        />
+
+        <g
+          class="hero_logo_outline"
+          fill="transparent"
+          stroke="rgba(255,255,255,0.95)"
+          stroke-width="2"
+        >
+          <text
+            x="50%"
+            y="44%"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            font-size="260"
+            font-weight="900"
+            font-family="Arial Black, Impact, sans-serif"
+            letter-spacing="-18"
+          >
+            TAKE
+          </text>
+
+          <text
+            x="50%"
+            y="75%"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            font-size="72"
+            font-weight="600"
+            font-family="Arial, sans-serif"
+            letter-spacing="22"
+          >
+            AUDIOVISUAL
+          </text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- NUVENS/FUMAÇA FIXAS EMBAIXO, SEM SUBIR -->
+    <div class="hero_reveal_clouds pointer-events-none absolute inset-x-0 bottom-0 z-[50]">
+      <div class="hero_reveal_cloud_left absolute left-[-18%] bottom-[-4vh] w-[70vw] max-w-[900px]">
+        <img src="/images/cloud.webp" alt="" class="w-full" />
+      </div>
+
+      <div class="hero_reveal_cloud_right absolute right-[-18%] bottom-[-4vh] w-[70vw] max-w-[900px]">
+        <img src="/images/cloud.webp" alt="" class="w-full" />
+      </div>
+
+      <div class="hero_reveal_smoke absolute inset-x-0 bottom-[-10vh]">
+        <img src="/images/smoke.webp" alt="" class="w-full object-cover" />
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
@@ -165,14 +187,8 @@ import Button from "../global/Button.astro";
     strokeDashoffset: 2200,
   });
 
-  gsap.set(".hero_logo_fill", {
-    opacity: 0,
-  });
-
   const intro = gsap.timeline({
-    defaults: {
-      ease: "power4.out",
-    },
+    defaults: { ease: "power4.out" },
   });
 
   intro
@@ -189,16 +205,6 @@ import Button from "../global/Button.astro";
         duration: 1.2,
       },
       "-=0.6"
-    )
-    .from(
-      ".hero_house",
-      {
-        yPercent: 12,
-        scale: 0.96,
-        opacity: 0,
-        duration: 1.2,
-      },
-      "-=1"
     )
     .from(
       ".hero_cloud_left",
@@ -246,96 +252,103 @@ import Button from "../global/Button.astro";
       "-=0.45"
     );
 
-  const scrollTl = gsap.timeline({
+  gsap.to(".hero_content", {
+    yPercent: -35,
+    scale: 0.9,
+    opacity: 0,
+    ease: "none",
     scrollTrigger: {
       trigger: ".hero_top",
       start: "top top",
-      end: "bottom bottom",
+      end: "bottom top",
       scrub: 1.2,
     },
   });
 
-  scrollTl
-    .to(".hero_content", {
-      yPercent: 14,
-      scale: 0.94,
-      opacity: 0,
-      ease: "none",
-    })
-    .to(
-      ".hero_back",
-      {
-        yPercent: -6,
-        scale: 1.04,
-        ease: "none",
-      },
-      0
-    )
-    .to(
-      ".hero_house",
-      {
-        yPercent: -18,
-        scale: 1.04,
-        ease: "none",
-      },
-      0
-    )
-    .to(
-      ".hero_cloud_left",
-      {
-        xPercent: -8,
-        ease: "none",
-      },
-      0
-    )
-    .to(
-      ".hero_cloud_right",
-      {
-        xPercent: 8,
-        ease: "none",
-      },
-      0
-    )
-    .to(
-      ".hero_smoke",
-      {
-        yPercent: 55,
-        ease: "none",
-      },
-      0
-    )
-    .to(
-      ".hero_logo_layer",
-      {
-        yPercent: -18,
-        opacity: 1,
-        ease: "none",
-      },
-      0.42
-    )
-    .to(
-      ".hero_logo_outline text",
-      {
-        strokeDashoffset: 0,
-        stagger: 0.08,
-        ease: "none",
-      },
-      0.48
-    )
-    .to(
-      ".hero_logo_fill",
-      {
-        opacity: 1,
-        ease: "none",
-      },
-      0.68
-    )
-    .to(
-      ".hero_logo_outline",
-      {
-        opacity: 0.6,
-        ease: "none",
-      },
-      0.78
-    );
+  gsap.to(".hero_back", {
+    yPercent: -8,
+    scale: 1.04,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_top",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.from(".hero_reveal_house", {
+    yPercent: 42,
+    scale: 0.96,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top bottom",
+      end: "top top",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.from(".hero_reveal_logo", {
+    yPercent: 45,
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top 85%",
+      end: "top 20%",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.to(".hero_logo_outline text", {
+    strokeDashoffset: 0,
+    stagger: 0.08,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top 75%",
+      end: "top 10%",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.from(".hero_logo_fill", {
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top 45%",
+      end: "top 5%",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.to(".hero_reveal_house", {
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top 30%",
+      end: "top -10%",
+      scrub: 1.2,
+    },
+  });
+
+  gsap.to(".hero_reveal_bg", {
+    yPercent: -6,
+    scale: 1.04,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero_reveal",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1.2,
+    },
+  });
+
+  /*
+    Não tem animação nas nuvens de baixo.
+    Elas ficam fixas no bottom da segunda cena para não criar espaço embaixo.
+  */
 </script>
