@@ -1,31 +1,37 @@
 ---
-import { ArrowRight } from "lucide-astro";
+import { ArrowRight, Play } from "lucide-astro";
 import Button from "../global/Button.astro";
 
 const cards = [
   {
+    type: "image",
     title: `Fotografia\nde Produtos`,
-    image: "produtos/IMG_3741.webp",
+    media: "/produtos/IMG_3741.webp",
     alt: "Fotografia de Produtos",
     text: "Imagens profissionais para destacar detalhes, valorizar sua marca e aumentar a percepção de qualidade.",
   },
   {
-    title: `Arquitetura\ne Interiores`,
-    image: "arquitetura/IMG_1054.webp",
-    alt: "Arquitetura e Interiores",
-    text: "Produções visuais para apresentar ambientes, projetos arquitetônicos e espaços com impacto visual.",
+    type: "video",
+    title: `Vídeos\nInstitucionais`,
+    media: "/videos/institucional.mp4",
+    poster: "/arquitetura/IMG_0154.webp",
+    alt: "Vídeo Institucional",
+    text: "Produções em vídeo para apresentar sua empresa, sua estrutura e seus diferenciais com presença.",
   },
   {
+    type: "image",
     title: `Retrato\nCorporativo`,
-    image: "arquitetura/IMG_0154.webp",
+    media: "/arquitetura/IMG_0039.webp",
     alt: "Retrato Corporativo",
     text: "Retratos profissionais para fortalecer autoridade, posicionamento e presença digital da sua marca.",
   },
   {
-    title: `Ensaio\nFotográfico`,
-    image: "ensaios/IMG_3606.webp",
-    alt: "Ensaio Fotográfico",
-    text: "Ensaios fotográficos para criar conteúdo visual impactante e autêntico.",
+    type: "video",
+    title: `Conteúdo\npara Redes`,
+    media: "/videos/social-media.mp4",
+    poster: "/ensaios/IMG_3606.webp",
+    alt: "Conteúdo para Redes",
+    text: "Vídeos curtos, dinâmicos e estratégicos para Instagram, campanhas e comunicação digital.",
   },
 ];
 ---
@@ -56,8 +62,8 @@ const cards = [
         </p>
 
         <span class="mt-10 inline-flex items-center">
-        <Button href="#contato" text="Conheça nossas produções" variant="dark" class="mt-10" />
-      </span>
+          <Button href="#contato" text="Conheça nossas produções" variant="dark" />
+        </span>
       </div>
     </div>
 
@@ -66,18 +72,41 @@ const cards = [
         cards.map((card) => (
           <a
             href="/portfolio"
-            class="group relative min-h-[480px] flex-1 overflow-hidden transition-all duration-700 ease-out md:hover:flex-[1.35]"
+            class="group relative min-h-[560px] flex-1 overflow-hidden transition-all duration-700 ease-out md:min-h-[700px] md:hover:flex-[1.35]"
           >
-            <img
-              src={card.image}
-              alt={card.alt}
-              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-            />
+            {card.type === "video" ? (
+              <video
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                src={card.media}
+                poster={card.poster}
+                autoplay
+                muted
+                loop
+                playsinline
+              />
+            ) : (
+              <img
+                src={card.media}
+                alt={card.alt}
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            )}
 
-            <div class="absolute inset-0 bg-black/30" />
+            <div class="absolute inset-0 bg-black/35 transition duration-500 group-hover:bg-black/25" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 
-            <div class="relative z-10 flex h-full min-h-[380px] flex-col justify-between p-8 text-white md:p-10">
+            {card.type === "video" && (
+              <div class="absolute right-6 top-6 z-20 flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-black/20 text-white backdrop-blur-md">
+                <Play class="h-5 w-5 fill-white" />
+              </div>
+            )}
+
+            <div class="relative z-10 flex h-full min-h-[560px] flex-col justify-between p-8 text-white md:min-h-[700px] md:p-10">
               <div class="w-full max-w-[340px]">
+                <span class="mb-5 inline-flex rounded-full border border-white/35 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
+                  {card.type === "video" ? "Vídeo" : "Imagem"}
+                </span>
+
                 <h3 class="whitespace-pre-line text-[33px] font-semibold leading-[38px] tracking-[-0.05em]">
                   {card.title}
                 </h3>

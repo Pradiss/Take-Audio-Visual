@@ -2,20 +2,24 @@
 import { ArrowLeft, ArrowRight } from "lucide-astro";
 ---
 
-<section id="depoimentos" class="overflow-hidden bg-[#030303] px-6 py-20 text-white sm:py-28">
-  <div class="mx-auto max-w-6xl">
+<section
+  id="depoimentos"
+  class="overflow-hidden bg-[#030303] px-6 py-20 text-white sm:py-28"
+>
+  <div class="mx-auto max-w-[1750px]">
     <div class="mb-8 flex items-center gap-2 text-sm">
       <span class="h-1.5 w-1.5 rounded-full bg-white"></span>
       <p>Depoimentos</p>
-      <span class="text-zinc-600">/ (<strong id="testimonial-total">04</strong>)</span>
+      <span class="text-zinc-600"
+        >/ (<strong id="testimonial-total">04</strong>)</span
+      >
     </div>
-
-    
 
     <blockquote
       id="testimonial-text"
       class="min-h-[160px] max-w-3xl text-2xl font-medium leading-snug tracking-[-0.03em] text-zinc-50 sm:text-3xl lg:text-4xl"
-    ></blockquote>
+    >
+    </blockquote>
 
     <div class="mt-10 flex items-center gap-5">
       <img
@@ -30,12 +34,15 @@ import { ArrowLeft, ArrowRight } from "lucide-astro";
 
         <p class="mt-1 text-sm text-zinc-500">
           <span id="testimonial-role"></span>
-          <strong id="testimonial-location" class="font-medium text-white"></strong>
+          <strong id="testimonial-location" class="font-medium text-white"
+          ></strong>
         </p>
       </div>
     </div>
 
-    <div class="mt-8 h-[2px] w-full max-w-sm overflow-hidden rounded-full bg-zinc-600">
+    <div
+      class="mt-8 h-[2px] w-full max-w-sm overflow-hidden rounded-full bg-zinc-600"
+    >
       <span
         id="testimonial-progress-bar"
         class="block h-full rounded-full bg-white transition-all duration-500 ease-out"
@@ -91,21 +98,21 @@ import { ArrowLeft, ArrowRight } from "lucide-astro";
       name: "Perlima",
       role: "Projeto em",
       location: "Vídeo Institucional",
-      image: "ensaios/IMG_3804.webp",
+      image: "ensaios/IMG_3604.webp",
     },
     {
       text: "“I usually hate getting my photo taken, but this felt totally different. Super relaxed, nothing forced. The photos actually look like me, not a version of me trying too hard.”",
       name: "Renato Martins",
       role: "Projeto em",
       location: "Vídeo Institucional",
-      image: "ensaios/IMG_3805.webp",
+      image: "ensaios/IMG_3605.webp",
     },
     {
       text: "“I usually hate getting my photo taken, but this felt totally different. Super relaxed, nothing forced. The photos actually look like me, not a version of me trying too hard.”",
       name: "Camila Andrade",
       role: "Projeto em",
       location: "Vídeo Institucional",
-      image: "ensaios/IMG_3806.webp",
+      image: "ensaios/IMG_3606.webp",
     },
     {
       text: "“I usually hate getting my photo taken, but this felt totally different. Super relaxed, nothing forced. The photos actually look like me, not a version of me trying too hard.”",
@@ -156,7 +163,8 @@ import { ArrowLeft, ArrowRight } from "lucide-astro";
   });
 
   prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    currentIndex =
+      (currentIndex - 1 + testimonials.length) % testimonials.length;
     renderTestimonial();
   });
 
