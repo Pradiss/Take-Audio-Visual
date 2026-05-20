@@ -13,8 +13,8 @@ const cards = [
   {
     type: "video",
     title: `Vídeos\nInstitucionais`,
-    media: "/videos/institucional.mp4",
-    poster: "/arquitetura/IMG_0154.webp",
+    media: "/ensaios/1.webp",
+    poster: "/ensaios/1.webp",
     alt: "Vídeo Institucional",
     text: "Produções em vídeo para apresentar sua empresa, sua estrutura e seus diferenciais com presença.",
   },
@@ -27,9 +27,9 @@ const cards = [
   },
   {
     type: "video",
-    title: `Conteúdo\npara Redes`,
-    media: "/videos/social-media.mp4",
-    poster: "/ensaios/IMG_3606.webp",
+    title: `Ensaios\nFotográficos`,
+    media: "/ensaios/1.webp",
+    poster: "/ensaios/1.webp",
     alt: "Conteúdo para Redes",
     text: "Vídeos curtos, dinâmicos e estratégicos para Instagram, campanhas e comunicação digital.",
   },
@@ -37,7 +37,7 @@ const cards = [
 ---
 
 <section id="features" class="bg-white text-[#151717]">
-  <div class="mx-auto max-w-[1760px] px-6 py-24 md:py-32">
+  <div class="mx-auto max-w-[1750px] px-6 py-24 md:py-32">
     <div class="grid gap-12 md:grid-cols-[1fr_1.25fr] md:items-start">
       <div>
         <h2
@@ -72,7 +72,7 @@ const cards = [
         cards.map((card) => (
           <a
             href="/portfolio"
-            class="group relative min-h-[560px] flex-1 overflow-hidden transition-all duration-700 ease-out md:min-h-[700px] md:hover:flex-[1.35]"
+            class="group relative min-h-[460px] flex-1 overflow-hidden transition-all duration-700 ease-out md:min-h-[00px] md:hover:flex-[1.35]"
           >
             {card.type === "video" ? (
               <video
