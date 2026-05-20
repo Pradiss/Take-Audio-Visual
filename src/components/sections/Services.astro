@@ -6,26 +6,32 @@ const services = [
   {
     number: "1",
     title: "Produtos",
-    image: "/IMG_3604.webp",
+    image: "produtos/IMG_3739.webp",
     text: "Produção de imagens still para produtos, marcas e campanhas com acabamento profissional.",
   },
   {
     number: "2",
     title: "Arquitetura",
-    image: "/IMG_3606.webp",
+    image: "arquitetura/IMG_0044.webp",
     text: "Fotografia e vídeo de ambientes para valorizar arquitetura e interiores.",
   },
   {
     number: "3",
     title: "Retrato Corporativo",
-    image: "/IMG_3605.webp",
+    image: "arquitetura/IMG_0040.webp",
     text: "Retratos profissionais para fortalecer autoridade, posicionamento e presença digital com imagens que transmitem confiança.",
+  },
+  {
+    number: "4",
+    title: "Ensaio Fotográfico",
+    image: "ensaios/IMG_3606.webp",
+    text: "Ensaios fotográficos para criar conteúdo visual impactante e autêntico.",
   },
 ];
 ---
 
 <section id="servicos" class="services-section bg-[#151717] text-white">
-  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-[0.8fr_1.2fr] md:py-28">
+  <div class="mx-auto grid max-w-[1750px] gap-12 px-6 py-24 md:grid-cols-[0.8fr_1.2fr] md:py-28">
     <div class="mb-8 flex items-center gap-2 text-sm sm:text-base">
       <span class="h-1.5 w-1.5 rounded-full bg-white"></span>
       <p>Serviços</p>
@@ -50,12 +56,12 @@ const services = [
           <img
             src={service.image}
             alt={service.title}
-            class="h-full w-full translate-y-[18%] scale-110 object-cover transition-transform duration-1000 ease-out group-hover:translate-y-0"
+            class="h-full w-full translate-y-[18%] scale-100 object-cover transition-transform duration-1000 ease-out group-hover:translate-y-0"
           />
           <div class="absolute inset-0 bg-black/55"></div>
         </div>
 
-        <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-[70px_1fr] gap-8 px-6 py-16 md:grid-cols-[70px_420px_1fr_120px] md:items-center">
+        <div class="relative z-10 mx-auto grid max-w-[1750px] grid-cols-[70px_1fr] gap-8 px-6 py-16 md:grid-cols-[70px_420px_1fr_120px] md:items-center">
           <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-sm">
             {service.number}
           </span>
@@ -76,7 +82,7 @@ const services = [
     ))}
   </div>
 
-  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:py-28">
+  <div class="mx-auto grid max-w-[1750px] gap-12 px-6 py-24 md:py-28">
     <div>
       <h2 class="services-bottom-title max-w-3xl text-[33px] font-medium leading-[38px] tracking-[-0.04em] md:text-[33px] md:leading-[38px]">
         Nossa equipe acompanha você em cada etapa da produção

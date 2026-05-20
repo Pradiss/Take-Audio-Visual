@@ -2,248 +2,168 @@
 import Button from "../global/Button.astro";
 ---
 
-<section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
-   <div class="pointer-events-none absolute inset-0 z-[2] grid grid-cols-6">
-    <span class="border-l border-white/5"></span>
-    <span class="border-l border-white/5"></span>
-    <span class="border-l border-white/5"></span>
-    <span class="border-l border-white/5"></span>
-    <span class="border-l border-white/5"></span>
-    <span class="border-l border-r border-white/5"></span>
-  </div>
-  <!-- PRIMEIRA CENA -->
-  <div class="hero_top relative z-[1] h-[180vh] overflow-hidden">
-    <div class="hero_sticky sticky top-0 h-screen min-h-[720px] overflow-hidden">
-      <div class="hero_back absolute inset-0 z-0">
-        <img
-          src="/images/back.webp"
-          alt=""
-          class="h-full w-full object-cover"
-        />
-      </div>
-
-      <div class="hero_clouds pointer-events-none absolute inset-0 z-[2]">
-        <div class="hero_cloud_left absolute left-[-20%] top-[24%] w-[70vw] max-w-[900px]">
-          <img src="/images/cloud.webp" alt="" class="w-full" />
-        </div>
-
-        <div class="hero_cloud_right absolute right-[-20%] top-[24%] w-[70vw] max-w-[900px]">
-          <img src="/images/cloud.webp" alt="" class="w-full" />
-        </div>
-      </div>
-
-      <div class="hero_content relative z-[10] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 text-center">
-        <h1 class="hero_title text-[58px] font-black leading-[0.9] tracking-[-0.065em] text-black md:text-[118px] lg:text-[148px]">
-          <span class="hero_word inline-block overflow-hidden px-2">
-            <span class="inline-block">Crie</span>
-          </span>
-
-          <span class="hero_word inline-block overflow-hidden px-2">
-            <span class="inline-block">Vídeos</span>
-          </span>
-
-          <span class="hero_word inline-block overflow-hidden px-2">
-            <span class="inline-block">Que</span>
-          </span>
-
-          <span class="hero_word inline-block overflow-hidden px-2">
-            <span class="inline-block">Marcam</span>
-          </span>
-        </h1>
-
-        <div class="hero_text mt-6 text-base font-medium text-black/55 md:text-lg">
-          <p>
-            Produção audiovisual. Direção criativa.
-            <span class="text-black/85">
-              Uma forma clara de posicionar sua marca.
-            </span>
-          </p>
-        </div>
-
-        <div class="hero_actions mt-8">
-          <Button href="/portfolio" text="Ver portfólio" variant="dark" />
-        </div>
-      </div>
-    </div>
+<section id="inicio" class="hero_root relative min-h-screen overflow-hidden bg-black text-white">
+  <!-- IMAGEM DE FUNDO -->
+  <div class="hero_back absolute inset-0 z-0">
+    <img
+      src="/arquitetura/IMG_0044.webp"
+      alt=""
+      class="h-full w-full object-cover"
+    />
   </div>
 
-  <!-- SEGUNDA CENA -->
-  <div class="hero_reveal relative z-[20] -mt-[100vh] min-h-screen overflow-hidden">
-    <div class="hero_reveal_bg absolute inset-0 z-0">
-      <img
-        src="/images/back.webp"
-        alt=""
-        class="h-full w-full object-cover"
-      />
-    </div>
+  <!-- OVERLAYS CINEMATOGRÁFICOS -->
+  <div class="absolute inset-0 z-[1] bg-black/55"></div>
+  <div class="absolute inset-0 z-[1] bg-gradient-to-r from-black/80 via-black/35 to-black/20"></div>
+  <div class="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-transparent to-black/35"></div>
 
-    <!-- CÂMERA -->
-    <div class="hero_reveal_camera pointer-events-none absolute inset-x-0 bottom-[12%] z-[5] mx-auto flex justify-center">
-      <img
-        src="/images/camera.webp"
-        alt=""
-        class="w-[58vw] max-w-[680px] opacity-95"
-      />
-    </div>
+  <!-- RUÍDO / TEXTURA -->
+  <div class="hero_noise pointer-events-none absolute inset-0 z-[2] opacity-[0.08]"></div>
 
-    <!-- LOGO SIMPLES -->
-    <div class="hero_reveal_logo pointer-events-none absolute inset-x-0 bottom-[38%] z-[10] text-center">
-      <h2 class="hero_logo_text text-[64px] font-black leading-none tracking-[-0.07em] text-white md:text-[140px] lg:text-[180px]">
-        TAKE
-      </h2>
-
-      <p class="mt-2 text-sm font-semibold tracking-[0.45em] text-white/80 md:text-xl">
-        AUDIOVISUAL
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div
+    class="relative z-10 mx-auto flex min-h-screen max-w-[1750px] flex-col justify-end px-6 pb-16 pt-32 md:px-10 lg:pb-24"
+  >
+    <div class="max-w-[900px]">
+      <p class="hero_eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-white/65">
+        TAKE AUDIOVISUAL
       </p>
+
+      <h1
+        class="hero_title text-[clamp(4.5rem,7vw,9rem)] font-black leading-[0.82] tracking-[-0.085em] text-white"
+      >
+        Crie vídeos que marcam
+      </h1>
+
+      <p class="hero_text mt-6 max-w-[620px] text-base font-medium leading-[1.55] text-white/70 md:text-xl">
+        Produção audiovisual, direção criativa e acabamento visual para marcas que querem presença, impacto e memória.
+      </p>
+
+      <div class="hero_actions mt-8">
+        <Button href="/portfolio" text="Ver portfólio" variant="light" />
+      </div>
     </div>
 
-    <!-- NUVENS/FUMAÇA FIXAS EMBAIXO -->
-    <div class="hero_reveal_clouds pointer-events-none absolute inset-x-0 bottom-0 z-[15]">
-      <div class="hero_reveal_cloud_left absolute left-[-18%] bottom-[-4vh] w-[70vw] max-w-[900px]">
-        <img src="/images/cloud.webp" alt="" class="w-full" />
+    <!-- INFO RODAPÉ -->
+    <div class="mt-16 grid gap-6 text-xs font-semibold uppercase tracking-[0.22em] text-white/45 md:grid-cols-3">
+      <div>
+        <span class="block text-white/80">Direção</span>
+        Criativa e visual
       </div>
 
-      <div class="hero_reveal_cloud_right absolute right-[-18%] bottom-[-4vh] w-[70vw] max-w-[900px]">
-        <img src="/images/cloud.webp" alt="" class="w-full" />
+      <div>
+        <span class="block text-white/80">Captação</span>
+        Imagem, luz e movimento
       </div>
 
-      <div class="hero_reveal_smoke absolute inset-x-0 bottom-[-10vh]">
-        <img src="/images/smoke.webp" alt="" class="w-full object-cover" />
+      <div>
+        <span class="block text-white/80">Entrega</span>
+        Conteúdo com presença
       </div>
+    </div>
+  </div>
+
+  <!-- CARD FLUTUANTE -->
+  <div
+    class="hero_card absolute bottom-[18%] right-[5%] z-20 hidden w-[320px] rounded-2xl border border-white/10 bg-white/10 p-3 shadow-2xl backdrop-blur-md lg:block"
+  >
+    <div class="overflow-hidden rounded-xl">
+      <img
+        src="/arquitetura/IMG_0044.webp"
+        alt=""
+        class="h-[160px] w-full object-cover"
+      />
+    </div>
+
+    <div class="mt-3 flex items-center justify-between px-1">
+      <div>
+        <p class="text-sm font-semibold text-white">Frame de impacto</p>
+        <p class="text-xs text-white/50">Direção audiovisual</p>
+      </div>
+
+      <span class="h-2 w-2 rounded-full bg-white"></span>
     </div>
   </div>
 </section>
 
+<style>
+  .hero_title,
+  .hero_text {
+    text-wrap: balance;
+  }
+
+  .hero_noise {
+    background-image:
+      radial-gradient(circle at 20% 20%, white 0.5px, transparent 0.5px),
+      radial-gradient(circle at 80% 30%, white 0.5px, transparent 0.5px),
+      radial-gradient(circle at 50% 80%, white 0.5px, transparent 0.5px);
+    background-size: 18px 18px;
+  }
+</style>
+
 <script>
   import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  const hero = document.querySelector(".hero_root");
 
-  const intro = gsap.timeline({
-    defaults: { ease: "power4.out" },
-  });
+  if (hero) {
+    const intro = gsap.timeline({
+      defaults: {
+        ease: "power4.out",
+      },
+    });
 
-  intro
-    .from("#site-header", {
-      y: -70,
-      opacity: 0,
-      duration: 0.9,
-    })
-    .from(
-      ".hero_back",
-      {
+    intro
+      .from(".hero_back img", {
         scale: 1.08,
         opacity: 0,
-        duration: 1.2,
-      },
-      "-=0.6"
-    )
-    .from(
-      ".hero_cloud_left",
-      {
-        xPercent: -15,
-        opacity: 0,
-        duration: 1.2,
-      },
-      "-=1"
-    )
-    .from(
-      ".hero_cloud_right",
-      {
-        xPercent: 15,
-        opacity: 0,
-        duration: 1.2,
-      },
-      "-=1.1"
-    )
-    .from(
-      ".hero_word span",
-      {
-        yPercent: 105,
-        duration: 1,
-        stagger: 0.08,
-      },
-      "-=0.65"
-    )
-    .from(
-      ".hero_text",
-      {
-        y: 24,
-        opacity: 0,
-        duration: 0.75,
-      },
-      "-=0.4"
-    )
-    .from(
-      ".hero_actions",
-      {
-        y: 24,
-        opacity: 0,
-        duration: 0.75,
-      },
-      "-=0.45"
-    );
-
-  gsap.to(".hero_content", {
-    yPercent: -35,
-    scale: 0.9,
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_top",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.to(".hero_back", {
-    yPercent: -8,
-    scale: 1.04,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_top",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.from(".hero_reveal_camera", {
-    yPercent: 28,
-    scale: 0.96,
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top bottom",
-      end: "top top",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.from(".hero_reveal_logo", {
-    yPercent: 30,
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top 85%",
-      end: "top 25%",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.to(".hero_reveal_bg", {
-    yPercent: -6,
-    scale: 1.04,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1.2,
-    },
-  });
+        duration: 1.4,
+      })
+      .from(
+        ".hero_eyebrow",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.7,
+        },
+        "-=0.8"
+      )
+      .from(
+        ".hero_title",
+        {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=0.45"
+      )
+      .from(
+        ".hero_text",
+        {
+          y: 28,
+          opacity: 0,
+          duration: 0.8,
+        },
+        "-=0.5"
+      )
+      .from(
+        ".hero_actions",
+        {
+          y: 24,
+          opacity: 0,
+          duration: 0.75,
+        },
+        "-=0.5"
+      )
+      .from(
+        ".hero_card",
+        {
+          x: 40,
+          y: 30,
+          opacity: 0,
+          duration: 0.9,
+        },
+        "-=0.55"
+      );
+  }
 </script>

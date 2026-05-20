@@ -5,27 +5,33 @@ import Button from "../global/Button.astro";
 const cards = [
   {
     title: `Fotografia\nde Produtos`,
-    image: "/IMG_3604.webp",
+    image: "produtos/IMG_3741.webp",
     alt: "Fotografia de Produtos",
     text: "Imagens profissionais para destacar detalhes, valorizar sua marca e aumentar a percepção de qualidade.",
   },
   {
     title: `Arquitetura\ne Interiores`,
-    image: "/IMG_3606.webp",
+    image: "arquitetura/IMG_1054.webp",
     alt: "Arquitetura e Interiores",
     text: "Produções visuais para apresentar ambientes, projetos arquitetônicos e espaços com impacto visual.",
   },
   {
     title: `Retrato\nCorporativo`,
-    image: "/IMG_3605.webp",
+    image: "arquitetura/IMG_0154.webp",
     alt: "Retrato Corporativo",
     text: "Retratos profissionais para fortalecer autoridade, posicionamento e presença digital da sua marca.",
+  },
+  {
+    title: `Ensaio\nFotográfico`,
+    image: "ensaios/IMG_3606.webp",
+    alt: "Ensaio Fotográfico",
+    text: "Ensaios fotográficos para criar conteúdo visual impactante e autêntico.",
   },
 ];
 ---
 
 <section id="features" class="bg-white text-[#151717]">
-  <div class="mx-auto max-w-7xl px-6 py-24 md:py-32">
+  <div class="mx-auto max-w-[1760px] px-6 py-24 md:py-32">
     <div class="grid gap-12 md:grid-cols-[1fr_1.25fr] md:items-start">
       <div>
         <h2
@@ -60,7 +66,7 @@ const cards = [
         cards.map((card) => (
           <a
             href="/portfolio"
-            class="group relative min-h-[380px] flex-1 overflow-hidden transition-all duration-700 ease-out md:hover:flex-[1.35]"
+            class="group relative min-h-[480px] flex-1 overflow-hidden transition-all duration-700 ease-out md:hover:flex-[1.35]"
           >
             <img
               src={card.image}
@@ -68,7 +74,7 @@ const cards = [
               class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
             />
 
-            <div class="absolute inset-0 bg-black/55" />
+            <div class="absolute inset-0 bg-black/30" />
 
             <div class="relative z-10 flex h-full min-h-[380px] flex-col justify-between p-8 text-white md:p-10">
               <div class="w-full max-w-[340px]">
