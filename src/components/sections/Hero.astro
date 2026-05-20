@@ -3,6 +3,14 @@ import Button from "../global/Button.astro";
 ---
 
 <section id="inicio" class="hero_root relative overflow-hidden bg-[#f4efe7]">
+   <div class="pointer-events-none absolute inset-0 z-[2] grid grid-cols-6">
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-white/5"></span>
+    <span class="border-l border-r border-white/5"></span>
+  </div>
   <!-- PRIMEIRA CENA -->
   <div class="hero_top relative z-[1] h-[180vh] overflow-hidden">
     <div class="hero_sticky sticky top-0 h-screen min-h-[720px] overflow-hidden">
@@ -69,95 +77,24 @@ import Button from "../global/Button.astro";
       />
     </div>
 
-    <!-- CASA COMO BACKGROUND, SEM ATRAPALHAR CLIQUE/HOVER -->
-    <div class="hero_reveal_house pointer-events-none absolute inset-x-0 bottom-[4%] z-[5] mx-auto w-[88vw] max-w-[1320px]">
+    <!-- CÂMERA -->
+    <div class="hero_reveal_camera pointer-events-none absolute inset-x-0 bottom-[12%] z-[5] mx-auto flex justify-center">
       <img
-        src="/images/house.webp"
+        src="/images/camera.webp"
         alt=""
-        class="w-full"
+        class="w-[58vw] max-w-[680px] opacity-95"
       />
     </div>
 
-    <div class="hero_reveal_logo pointer-events-none absolute inset-x-0 bottom-[30%] z-[10] flex justify-center">
-      <svg
-        class="hero_logo_svg w-[78vw] max-w-[1100px]"
-        viewBox="0 0 1600 520"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <clipPath id="take-logo-clip">
-            <text
-              x="50%"
-              y="44%"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              font-size="260"
-              font-weight="900"
-              font-family="Arial Black, Impact, sans-serif"
-              letter-spacing="-18"
-            >
-              TAKE
-            </text>
+    <!-- LOGO SIMPLES -->
+    <div class="hero_reveal_logo pointer-events-none absolute inset-x-0 bottom-[38%] z-[10] text-center">
+      <h2 class="hero_logo_text text-[64px] font-black leading-none tracking-[-0.07em] text-white md:text-[140px] lg:text-[180px]">
+        TAKE
+      </h2>
 
-            <text
-              x="50%"
-              y="75%"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              font-size="72"
-              font-weight="600"
-              font-family="Arial, sans-serif"
-              letter-spacing="22"
-            >
-              AUDIOVISUAL
-            </text>
-          </clipPath>
-        </defs>
-
-        <image
-          class="hero_logo_fill"
-          href="/images/house.webp"
-          x="0"
-          y="0"
-          width="1600"
-          height="520"
-          preserveAspectRatio="xMidYMid slice"
-          clip-path="url(#take-logo-clip)"
-        />
-
-        <g
-          class="hero_logo_outline"
-          fill="transparent"
-          stroke="rgba(255,255,255,0.95)"
-          stroke-width="2"
-        >
-          <text
-            x="50%"
-            y="44%"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-size="260"
-            font-weight="900"
-            font-family="Arial Black, Impact, sans-serif"
-            letter-spacing="-18"
-          >
-            TAKE
-          </text>
-
-          <text
-            x="50%"
-            y="75%"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-size="72"
-            font-weight="600"
-            font-family="Arial, sans-serif"
-            letter-spacing="22"
-          >
-            AUDIOVISUAL
-          </text>
-        </g>
-      </svg>
+      <p class="mt-2 text-sm font-semibold tracking-[0.45em] text-white/80 md:text-xl">
+        AUDIOVISUAL
+      </p>
     </div>
 
     <!-- NUVENS/FUMAÇA FIXAS EMBAIXO -->
@@ -182,11 +119,6 @@ import Button from "../global/Button.astro";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   gsap.registerPlugin(ScrollTrigger);
-
-  gsap.set(".hero_logo_outline text", {
-    strokeDasharray: 2200,
-    strokeDashoffset: 2200,
-  });
 
   const intro = gsap.timeline({
     defaults: { ease: "power4.out" },
@@ -278,9 +210,10 @@ import Button from "../global/Button.astro";
     },
   });
 
-  gsap.from(".hero_reveal_house", {
-    yPercent: 42,
+  gsap.from(".hero_reveal_camera", {
+    yPercent: 28,
     scale: 0.96,
+    opacity: 0,
     ease: "none",
     scrollTrigger: {
       trigger: ".hero_reveal",
@@ -291,47 +224,13 @@ import Button from "../global/Button.astro";
   });
 
   gsap.from(".hero_reveal_logo", {
-    yPercent: 45,
+    yPercent: 30,
     opacity: 0,
     ease: "none",
     scrollTrigger: {
       trigger: ".hero_reveal",
       start: "top 85%",
-      end: "top 20%",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.to(".hero_logo_outline text", {
-    strokeDashoffset: 0,
-    stagger: 0.08,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top 75%",
-      end: "top 10%",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.from(".hero_logo_fill", {
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top 45%",
-      end: "top 5%",
-      scrub: 1.2,
-    },
-  });
-
-  gsap.to(".hero_reveal_house", {
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero_reveal",
-      start: "top 30%",
-      end: "top -10%",
+      end: "top 25%",
       scrub: 1.2,
     },
   });
